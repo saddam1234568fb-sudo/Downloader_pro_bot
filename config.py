@@ -3,15 +3,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BOT_TOKEN = os.getenv("8015240629:AAEquAIRwMTOD-U6lMF0ug7DtwyTwAW1c4Y")
+# এখানে ব্র্যাকেটের ভেতরে শুধু "BOT_TOKEN" লেখা থাকবে, আসল টোকেন নয়
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
 # Ensure super admin is always present, plus any added via env
 ADMIN_IDS = {6836865426}
-env_admins = os.getenv("6836865426", "")
+env_admins = os.getenv("ADMIN_IDS", "")
 if env_admins:
     ADMIN_IDS.update([int(x.strip()) for x in env_admins.split(",") if x.strip().isdigit()])
 
 SUPPORT_CHANNEL = os.getenv("SUPPORT_CHANNEL", "@YourSupportChannel")
-BOT_USERNAME = os.getenv("Downloader_pro20_bot", "ProMediaDownloaderBot")
+BOT_USERNAME = os.getenv("BOT_USERNAME", "Downloader_pro20_bot")
 PORT = int(os.getenv("PORT", "10000"))
 
 # Limits & Settings Defaults
